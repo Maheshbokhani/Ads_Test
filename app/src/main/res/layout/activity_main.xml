@@ -38,6 +38,16 @@
         android:background="#ed5597"
         android:layout_marginTop="20dp"/>
 
+    <Button
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Test"
+        android:background="#55edc2"
+        android:layout_marginTop="20dp"/>
+
 
 
     <com.google.android.gms.ads.AdView

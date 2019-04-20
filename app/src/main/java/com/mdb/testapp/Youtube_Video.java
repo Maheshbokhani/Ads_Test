@@ -1,5 +1,6 @@
 package com.mdb.testapp;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -15,7 +16,6 @@ public class Youtube_Video extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube__video);
 
-        Button Play =(Button)findViewById(R.id.play);
 
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
 
@@ -26,6 +26,7 @@ public class Youtube_Video extends YouTubeBaseActivity {
              youTubePlayer.loadVideo("3XBHBOhGMe4",0);
              youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
 
+
             }
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider,
@@ -33,5 +34,7 @@ public class Youtube_Video extends YouTubeBaseActivity {
 
             }
         });
+
+
     }
 }

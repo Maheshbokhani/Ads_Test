@@ -20,7 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Youtube_Video" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Youtube_Video"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Home"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Test"></activity>
+
     </application>
 
 </manifest>
