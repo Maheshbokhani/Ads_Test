@@ -9,7 +9,6 @@
     android:gravity="top"
     tools:context=".Youtube_Video">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -23,7 +22,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:background="#fff"/>
+            android:background="#000"/>
 
         <TextView
             android:layout_width="250dp"
@@ -38,6 +37,7 @@
             android:text="hello i am  mahesh bokhani and you hello i am  mahesh bokhani and you"/>
 
         <ImageButton
+            android:id="@+id/fullScreen"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -55,12 +55,23 @@
         android:layout_marginTop="10dp"
         />
 
+    <TextView
+        android:id="@+id/videoSize"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#80ffffff"
+        android:textSize="25dp"
+        android:textColor="#000"
+        />
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="#000"
+        android:background="#806e6e6e"
         android:gravity="center"
+
         android:layout_gravity="center"
         android:orientation="horizontal">
 
@@ -69,8 +80,9 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
-            android:background="#fff"/>
+            android:background="#000"/>
         <ImageButton
+            android:id="@+id/seekvideoreverse"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -78,6 +90,15 @@
             android:background="#fff"/>
 
         <ImageButton
+            android:id="@+id/playButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/white_play_icon"/>
+
+        <ImageButton
+            android:id="@+id/seekvideo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -85,13 +106,7 @@
             android:background="#fff"/>
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:background="#fff"/>
-
-        <ImageButton
+            android:id="@+id/next"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -100,6 +115,5 @@
 
 
     </LinearLayout>
-
 
 </LinearLayout>

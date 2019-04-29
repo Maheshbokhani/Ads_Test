@@ -17,75 +17,43 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
+import com.google.android.gms.ads.doubleclick.PublisherAdView;
+import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
-public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener, View.OnClickListener {
-    private InterstitialAd mInterstitialAd;
-    private RewardedVideoAd mRewardedVideoAd;
-    private AdView mAdView;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button Interstial, Rewarded, Youtube,Test;
+    private PublisherInterstitialAd mPublisherInterstitialAd;
+    Button  Youtube,Test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Interstial = (Button) findViewById(R.id.interstial);
-        Rewarded = (Button) findViewById(R.id.rewarded);
         Youtube = (Button) findViewById(R.id.youtube_video);
         Test = (Button) findViewById(R.id.test);
 
         Test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  startActivity(new Intent(MainActivity.this, Home.class));
+                startActivity(new Intent(MainActivity.this, Home.class));
             }
         });
 
-         Youtube.setOnClickListener(this);
+        Youtube.setOnClickListener(this);
 
+        mPublisherInterstitialAd = new PublisherInterstitialAd(this);
+        mPublisherInterstitialAd.setAdUnitId("/6499/example/interstitial");
+        mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
 
-        Interstial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mInterstitialAd.isLoaded()) {
-
-                }
-            }
-        });
-
-        Rewarded.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mRewardedVideoAd.isLoaded()) {
-                    mRewardedVideoAd.show();
-                }
-            }
-        });
-
-        MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
-
-
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-        mInterstitialAd.setAdListener(new AdListener() {
+        mPublisherInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
-                mInterstitialAd.show();
+              mPublisherInterstitialAd.show();
             }
 
             @Override
@@ -114,48 +82,8 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
             }
         });
 
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        mRewardedVideoAd.setRewardedVideoAdListener(this);
 
-        loadRewardedVideoAd();
-    }
 
-    private void loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
-                new AdRequest.Builder().build());
-    }
-
-    @Override
-    public void onRewarded(RewardItem reward) {
-        // Reward the user.
-    }
-
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-    }
-
-    @Override
-    public void onRewardedVideoAdClosed() {
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int errorCode) {
-    }
-
-    @Override
-    public void onRewardedVideoAdLoaded() {
-    }
-
-    @Override
-    public void onRewardedVideoAdOpened() {
-    }
-
-    @Override
-    public void onRewardedVideoStarted() {
-    }
-
-    @Override
-    public void onRewardedVideoCompleted() {
     }
 
     public void onClick(View view) {
@@ -163,12 +91,10 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         switch (view.getId()) {
 
             case R.id.youtube_video:
-                Intent intent = new Intent(getBaseContext(), Youtube_Video.class);
+                Intent intent = new Intent(getBaseContext(), Video_View.class);
+                intent.putExtra("url","3XBHBOhGMe4");
                 startActivity(intent);
         }
     }
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
 
-    }
 }
