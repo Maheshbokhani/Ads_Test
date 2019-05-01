@@ -24,10 +24,10 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
 
-    private PublisherInterstitialAd mPublisherInterstitialAd;
-    Button  Youtube,Test;
+    private AdView mAdView;
+    Button  Youtube,Test,BHits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,44 +46,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Youtube.setOnClickListener(this);
 
-        mPublisherInterstitialAd = new PublisherInterstitialAd(this);
-        mPublisherInterstitialAd.setAdUnitId("/6499/example/interstitial");
-        mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
+        MobileAds.initialize(this,
+                "ca-app-pub-3940256099942544~3347511713");
 
-        mPublisherInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-              mPublisherInterstitialAd.show();
-            }
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-            }
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
 
-            @Override
-            public void onAdOpened() {
-                // Code to be executed when the ad is displayed.
-            }
+        BHits = (Button) findViewById(R.id.b_hits);
 
+        BHits.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAdClicked() {
-                // Code to be executed when the user clicks on an ad.
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            @Override
-            public void onAdClosed() {
-                // Code to be executed when the interstitial ad is closed.
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, B_Hits.class));
             }
         });
-
-
-
     }
 
     public void onClick(View view) {

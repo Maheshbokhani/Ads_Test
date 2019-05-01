@@ -5,28 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/corner"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/interstial"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Interstial Ads"
-        android:background="#ff0468"
-        android:layout_marginTop="20dp"/>
-
-    <Button
-        android:id="@+id/rewarded"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Rewarded Video Ads"
-        android:background="#ed5547"
-        android:layout_marginTop="20dp"/>
-
 
     <Button
         android:id="@+id/youtube_video"
@@ -48,17 +28,27 @@
         android:background="#55edc2"
         android:layout_marginTop="20dp"/>
 
+    <Button
+        android:id="@+id/b-hits"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="B hits"
+        android:background="#55edc2"
+        android:layout_marginTop="20dp"/>
 
-    <com.google.android.gms.ads.doubleclick.PublisherAdView
+    <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/publisherAdView"
+        android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="/6499/example/banner">
-    </com.google.android.gms.ads.doubleclick.PublisherAdView>
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 
 
 

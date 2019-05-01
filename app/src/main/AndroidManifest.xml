@@ -3,9 +3,6 @@
     package="com.mdb.testapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" android:theme="@style/Mainpage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +32,8 @@
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
 
-        <activity android:name=".Video_View"></activity>
+        <activity android:name=".Video_View" />
+        <activity android:name=".B_Hits"  android:label="B-Hits" ></activity>
     </application>
 
 </manifest>

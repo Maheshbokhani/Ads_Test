@@ -4,58 +4,204 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#000"
     tools:context=".Video_View">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#000"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+
+       <LinearLayout
+           android:layout_weight="0.5"
+           android:layout_width="wrap_content"
+           android:layout_height="50dp">
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow_back"
+
+            />
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp">
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/share"
+            />
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/screen_rotation"
+            />
+        </LinearLayout>
+
+       </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        android:text="Hello i am mahesh bokhani and you! hello i am mahesh bokhani and you!"
+        android:textColor="#fff"
+        android:textSize="15dp"
+        />
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtube_player_view"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#ebeff2" />
+        android:layout_height="wrap_content"
+        android:background="#000"
+        />
 
     <LinearLayout
         android:id="@+id/video_control"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#80a4a2a2"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal"
-       >
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:weightSum="10">
 
         <ImageButton
+
             android:id="@+id/play_video"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
-
-            android:background="@drawable/white_play_icon" />
-
-        <ImageButton
-            android:id="@+id/pause_video"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/pause" />
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/play" />
 
         <SeekBar
+            android:layout_weight="9.5"
             android:id="@+id/video_seekbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="6"
             android:max="100"
-            android:scrollbarStyle="outsideInset"
-            android:progress="0" />
+
+            />
 
         <TextView
+            android:layout_weight="0.5"
             android:id="@+id/play_time"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_margin="5dp"
-           android:textSize="20dp"
+            android:textSize="15dp"
             android:paddingLeft="5dp"
-            android:text="--:--"
-            android:textColor="@android:color/white" />
+            android:text="00:00"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/fullscreen"
+            />
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="#000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="1"
+        android:layout_gravity="center"
+
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_weight="0.25"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="40dp">
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/previous"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.25"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="40dp">
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/replay_10"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.25"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="40dp">
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/forward"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.25"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="40dp">
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/next"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
 
 </LinearLayout>

@@ -16,7 +16,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener, View.OnClickListener {
 
     public static final String API_KEY = "AIzaSyDpqgVkQRgFcSzL57qb5i_nvsgCeo4a_Oc";
-    public static final String VIDEO_ID = "fVO_PLQOnWA";
+    public static final String VIDEO_ID = "5X7WWVTrBvM";
 
     private YouTubePlayer mPlayer;
 
@@ -25,7 +25,6 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
 
     private Handler mHandler = null;
     private SeekBar mSeekBar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +37,12 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
         //Add play button to explicitly play video in YouTubePlayerView
         mPlayButtonLayout = findViewById(R.id.video_control);
         findViewById(R.id.play_video).setOnClickListener(this);
-        findViewById(R.id.pause_video).setOnClickListener(this);
 
         mPlayTimeTextView = (TextView) findViewById(R.id.play_time);
         mSeekBar = (SeekBar) findViewById(R.id.video_seekbar);
         mSeekBar.setOnSeekBarChangeListener(mVideoSeekBarChangeListener);
 
         mHandler = new Handler();
-
     }
 
     @Override
@@ -58,10 +55,6 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
                     mPlayer.pause();
                 }
 
-                break;
-            case R.id.pause_video:
-                if (null != mPlayer && mPlayer.isPlaying())
-                    mPlayer.pause();
                 break;
         }
     }
@@ -88,7 +81,6 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
         player.setPlaybackEventListener(mPlaybackEventListener);
 
     }
-
 
     YouTubePlayer.PlaybackEventListener mPlaybackEventListener = new YouTubePlayer.PlaybackEventListener() {
         @Override
@@ -173,8 +165,7 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
         int seconds = i / 1000;
         int minutes = seconds / 60;
         int hours = minutes / 60;
-
-        return (hours == 0 ? "--:" : hours + ":") + String.format("%02d:%02d", minutes % 60, seconds % 60);
+        return (hours == 0 ? "" : hours + ":") + String.format("%02d:%02d", minutes % 60, seconds % 60);
 
     }
 
