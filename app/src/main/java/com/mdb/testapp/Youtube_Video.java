@@ -73,27 +73,27 @@ public class Youtube_Video extends YouTubeBaseActivity implements YouTubePlayer.
         });
 
 
-//        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
-//            @Override
-//            public void onInitializationSuccess(YouTubePlayer.Provider provider,
-//                                                YouTubePlayer player, boolean b) {
-//                youTubePlayer = player;
-//
-//                Intent intent = getIntent();
-//                abc = intent.getStringExtra("url");
-//
-//                //  youTubePlayer.loadVideo("3XBHBOhGMe4", 0);
-//                youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
-//                if (!b) {
-//                    youTubePlayer.loadVideo(abc, 0);
-//                }
-//            }
-//
-//            @Override
-//            public void onInitializationFailure(YouTubePlayer.Provider provider,
-//                                                YouTubeInitializationResult youTubeInitializationResult) {
-//            }
-//        };
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider,
+                                                YouTubePlayer player, boolean b) {
+                youTubePlayer = player;
+
+                Intent intent = getIntent();
+                abc = intent.getStringExtra("url");
+
+                //  youTubePlayer.loadVideo("3XBHBOhGMe4", 0);
+                youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
+                if (!b) {
+                    youTubePlayer.loadVideo(abc, 0);
+                }
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider,
+                                                YouTubeInitializationResult youTubeInitializationResult) {
+            }
+        };
 
 
         Next = findViewById(R.id.next);

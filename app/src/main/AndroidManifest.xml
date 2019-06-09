@@ -3,6 +3,7 @@
     package="com.mdb.testapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait" android:theme="@style/Mainpage">
+            android:screenOrientation="portrait"
+            android:theme="@style/Mainpage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +35,10 @@
             android:value="true" />
 
         <activity android:name=".Video_View" />
-        <activity android:name=".B_Hits"  android:label="B-Hits" ></activity>
+        <activity
+            android:name=".B_Hits"
+            android:label="B-Hits" />
+        <activity android:name=".Main"></activity>
     </application>
 
 </manifest>

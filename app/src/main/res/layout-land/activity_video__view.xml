@@ -8,78 +8,6 @@
     android:weightSum="10"
     tools:context=".Video_View">
 
-
-    <LinearLayout
-        android:layout_weight="0.5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:layout_marginTop="5dp"
-        android:background="#000"
-        android:weightSum="1"
-       android:layout_gravity="center"
-        android:orientation="horizontal">
-
-
-       <LinearLayout
-           android:layout_weight="0.1"
-           android:gravity="center"
-           android:layout_gravity="center"
-
-           android:layout_width="wrap_content"
-           android:layout_height="50dp">
-
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/arrow_back"
-            />
-
-       </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="0.8"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:paddingRight="10dp"
-                android:gravity="center"
-                android:paddingLeft="10dp"
-                android:text="Arijit Singh | Live | USA Tour | Full Concert | Full Video | 2019 | HD | Arijit Music Sk"
-                android:textColor="#fff"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="0.1"
-            android:gravity="right"
-            android:paddingRight="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp">
-
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/share"
-            />
-
-        </LinearLayout>
-
-       </LinearLayout>
-
-
-
     <com.google.android.youtube.player.YouTubePlayerView
         android:layout_weight="8"
         android:id="@+id/youtube_player_view"
@@ -139,11 +67,11 @@
             android:layout_weight="0.3"
             android:layout_width="wrap_content"
             android:layout_height="30dp">
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/fullscreen"
-            />
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/fullscreen"
+                />
         </LinearLayout>
 
 
@@ -198,12 +126,12 @@
             android:gravity="center"
             android:layout_height="40dp">
 
-        <ImageButton
-            android:background="#000"
-            android:id="@+id/play_video"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            />
+            <ImageButton
+                android:background="#000"
+                android:id="@+id/play_video"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                />
 
         </LinearLayout>
 
@@ -239,3 +167,6 @@
 
 
 </LinearLayout>
+
+
+

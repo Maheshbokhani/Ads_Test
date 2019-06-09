@@ -1,5 +1,6 @@
 package com.mdb.testapp;
 
+import android.app.Activity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +8,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class B_Hits extends AppCompatActivity {
+public class B_Hits extends Activity {
 
     ViewPager viewPager;
     LinearLayout sliderDotspanel;

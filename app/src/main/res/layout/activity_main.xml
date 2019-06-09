@@ -8,6 +8,28 @@
     android:background="@drawable/corner"
     tools:context=".MainActivity">
 
+    <!--<com.github.florent37.arclayout.ArcLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_marginRight="30dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--app:arc_cropDirection="cropOutside"-->
+        <!--app:arc_height="50dp"-->
+        <!--app:arc_position="right"-->
+
+        <!--&gt;-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/randhawa" />-->
+
+    <!--</com.github.florent37.arclayout.ArcLayout>-->
+
+
+
+
+
     <Button
         android:id="@+id/youtube_video"
         android:layout_width="match_parent"
@@ -49,6 +71,20 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
+
+
+    <com.durranilab.labprogresslayout.LabProgressLayout
+        android:id="@+id/labProgressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+
+        app:autoProgress="true"
+        app:cornerRadius="10"
+        app:emptyColor="#e8f5e9"
+        app:loadedColor="#81c784"
+        app:maxProgress="100" />
+
 
 
 
