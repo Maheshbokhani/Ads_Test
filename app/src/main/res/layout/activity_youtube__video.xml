@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="#000"
         android:gravity="center"
         android:layout_gravity="center"
@@ -26,14 +26,13 @@
 
         <TextView
             android:layout_width="250dp"
-            android:layout_height="60dp"
+            android:layout_height="45dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:textColor="#fff"
             android:textSize="15dp"
             android:paddingTop="5dp"
+            android:gravity="center"
             android:text="hello i am  mahesh bokhani and you hello i am  mahesh bokhani and you"/>
 
         <ImageButton
@@ -51,27 +50,75 @@
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtube_view"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
         />
 
-    <TextView
-        android:id="@+id/videoSize"
+    <LinearLayout
+        android:id="@+id/video_control"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#80ffffff"
-        android:textSize="25dp"
-        android:textColor="#000"
-        />
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:weightSum="10">
 
+
+        <TextView
+            android:layout_weight="0.4"
+            android:id="@+id/current_time"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:textSize="15dp"
+            android:text="0:00:00"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+
+        <SeekBar
+            android:layout_weight="8.7"
+            android:id="@+id/video_seekbar"
+            android:layout_width="100dp"
+            android:background="#000"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:max="100"
+            />
+
+        <TextView
+            android:layout_weight="0.4"
+            android:id="@+id/play_time"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:textSize="15dp"
+            android:paddingLeft="5dp"
+            android:text="0:00:00"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/fullscreen"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="#806e6e6e"
         android:gravity="center"
-
         android:layout_gravity="center"
         android:orientation="horizontal">
 

@@ -62,21 +62,31 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
         youTubePlayerView.initialize(API_KEY, this);
 
-        //Add play button to explicitly play video in YouTubePlayerView
         mPlayButtonLayout = findViewById(R.id.video_control);
 
-          play_button =  findViewById(R.id.play_video);
-          play_button.setOnClickListener(this);
-          play_button.setBackgroundResource(R.drawable.play);
+              play_button =  findViewById(R.id.play_video);
+              play_button.setOnClickListener(this);
+              play_button.setBackgroundResource(R.drawable.play);
 
-        mPlayTimeTextView = (TextView) findViewById(R.id.play_time);
-        current_time = (TextView) findViewById(R.id.current_time);
-        mSeekBar = (SeekBar) findViewById(R.id.video_seekbar);
-        mSeekBar.setOnSeekBarChangeListener(mVideoSeekBarChangeListener);
 
-        mHandler = new Handler();
+            mPlayTimeTextView = (TextView) findViewById(R.id.play_time);
+            current_time = (TextView) findViewById(R.id.current_time);
+            mSeekBar = (SeekBar) findViewById(R.id.video_seekbar);
+            mSeekBar.setOnSeekBarChangeListener(mVideoSeekBarChangeListener);
 
-        imageButton = findViewById(R.id.fullScreen);
+            mHandler = new Handler();
+
+
+            imageButton = findViewById(R.id.fullScreen);
+            imageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mPlayer.pause();
+                    mPlayer.setFullscreen(true);
+                    mPlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
+                }
+            });
+
 
         SeekTime = findViewById(R.id.seekvideo);
         SeekTime.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +126,6 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
         mPlayer = player;
 
 
-
-
         displayCurrentTime();
         if (null == mPlayer) return;
         String formattedTime = formatTime(player.getDurationMillis() - player.getCurrentTimeMillis());
@@ -129,11 +137,12 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
 
         // Start buffering
         if (!b) {
-            player.cueVideo(video);
+            player.loadVideo(video);
+            player.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
         }
 
 
-        player.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
+
         mPlayButtonLayout.setVisibility(View.VISIBLE);
 
         // Add listeners to YouTubePlayer instance
@@ -188,27 +197,6 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
 
         @Override
         public void onLoaded(String arg0) {
-            mPlayer.play();
-
-
-            mSeekBar.setMax(mPlayer.getDurationMillis());
-            new Thread(new Runnable() {
-                public void run() {
-                    while (mPlayer.getCurrentTimeMillis() < mPlayer.getDurationMillis()) {
-
-                        handler.post(new Runnable() {
-                            public void run() {
-                                mSeekBar.setProgress(mPlayer.getCurrentTimeMillis());
-                            }
-                        });
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }).start();
 
         }
 
@@ -231,8 +219,9 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
         @Override
         public void onProgressChanged(final SeekBar seekBar, final int progress, boolean fromUser) {
 //
-//            final long lengthPlayed = (mPlayer.getDurationMillis() * progress) / 100;
-//            mPlayer.seekToMillis((int) lengthPlayed);
+           final long lengthPlayed = (mPlayer.getDurationMillis() * progress) / 100;
+            mPlayer.seekToMillis((int) lengthPlayed);
+             mSeekBar.setProgress((int)lengthPlayed);
 
         }
 
@@ -257,7 +246,6 @@ public class Video_View extends YouTubeBaseActivity implements YouTubePlayer.OnI
                 }
                 break;
 
-            case R.id.fullScreen:
         }
     }
 
